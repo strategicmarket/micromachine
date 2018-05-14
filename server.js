@@ -10,10 +10,8 @@ require('dotenv').config()
 const express =            require('express');
 const path =               require('path');
 const bodyParser =         require('body-parser');
-const Winston =            require('winston')
 
 const app =   express();
-
 
 //////////////////////////////////////////////////////////////////////////
 ////////////////////  Register Middleware       /////////////////////////
@@ -22,13 +20,6 @@ const app =   express();
 app.use(logger("dev"));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-
-/*
-const handleRequest = (request, response) => {
-  Winston.info(`Route requested: ${request.url}`)
-  dispatcher.dispatch(request, response)
-}
-*/
 
 //////////////////////////////////////////////////////
 ////////// Register and Config Skill Bundles/////////
