@@ -1,11 +1,11 @@
 applications:
--       name: strategicmessage
-        host: strategicmessage
+-       name: micromachine
+        host: micromachine
         buildpack: https://github.com/cloudfoundry/nodejs-buildpack
         memory: 256M
         instances: 1
         domain: mybluemix.net
         path: .
-        command: npm run machine
+        command: npm run start
         env:
           PRODUCTION: true
