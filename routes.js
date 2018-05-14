@@ -10,7 +10,7 @@ const Winston = require('winston')
 module.exports = (dispatcher) => {
   Winston.info('routes registered')
 
-  dispatcher.setStatic('/resources')
+  dispatcher.setStatic('/public')
   dispatcher.setStaticDirname('static')
 
   // html pages
@@ -42,6 +42,16 @@ module.exports = (dispatcher) => {
     res.writeHead(201, {'Content-Type': 'application/json'})
     res.end(JSON.stringify(response))
   })
+
+  dispatcher.beforeFilter(/\//, function(req, res, chain) { //any url
+       console.log("Before filter");
+       chain.next(req, res, chain);
+   });
+
+   dispatcher.afterFilter(/\//, function(req, res, chain) { //any url
+       console.log("After filter");
+       chain.next(req, res, chain);
+   });
 
   dispatcher.onError = (req, res) => {
     res.writeHead(404)
