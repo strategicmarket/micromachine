@@ -60,12 +60,14 @@ app.use(log)
 app.use(auth)
 // help
 app.get('/', help)
-// text > twilio > server process
+
+// trigger skill execution via api
 app.use('/api/sms', sms)
 // web > twilio > text
 app.use('/api/web', web)
 // db api
 app.use('/api/db', db)
+
 // 404
 app.use(unk)
 // error handling

@@ -7,7 +7,7 @@ const Winston =           	require('winston')
 const bodyParser =  				require('body-parser')
 const { g, b, gr, r, y } =  require('../console')
 
-const log = (router) => {
+const sale = (router) => {
 
 	router.use(bodyParser.json());
 	router.use(function(req, res, next) {
@@ -20,4 +20,4 @@ const log = (router) => {
  });
 }
 
-module.exports = log
+module.exports = sale
