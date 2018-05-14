@@ -14,7 +14,7 @@ const sale = (router) => {
 
 		console.log(r("sell"))
 
-		Winston.info(`Route requested: ${request.url}`)
+		res.status(200).send({ message: 'Sell!' })
 
     next()
  });

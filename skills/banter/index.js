@@ -14,7 +14,7 @@ const banter = (router) => {
 	router.use(function(req, res, next) {
 
 		console.log(r("banter"))
-		Winston.info(`Route requested: ${request.url}`)
+		res.status(200).send({ message: 'Banter!' })
 
     next()
  });

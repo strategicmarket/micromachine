@@ -13,7 +13,7 @@ const ship = (router) => {
 	router.use(function(req, res, next) {
 		console.log(r("ship"))
 
-		Winston.info(`Route requested: ${request.url}`)
+	  res.status(200).send({ message: 'Ship!' })
 
     next()
  });

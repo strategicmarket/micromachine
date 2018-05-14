@@ -11,7 +11,7 @@ const log = (router) => {
 	router.use(bodyParser.json());
 	router.use(function(req, res, next) {
 
-		Winston.info(`Route requested: ${request.url}`)
+		Winston.info(`Route requested: ${req.url}`)
 
     next()
  });

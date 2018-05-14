@@ -78,9 +78,9 @@ app.use(errs)
 let port = process.env.PORT || keys.port;
 
 app.listen(port, () => {
-  console.log(b('listening on port '), port)
+  console.log(g(`listening on port ${port}`))
 });
-
+/*
 exports.listen = () => {
   server.listen(port, () => {
     Winston.info(`Http server listening on http://localhost:${port}`)
@@ -91,9 +91,8 @@ exports.close = (next) => {
   server.close(next)
 }
 
-console.log(process.env)
-
 const startServer = process.argv.find((n) => n === '--start')
 if (startServer) {
   exports.listen()
 }
+*/
