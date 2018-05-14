@@ -23,7 +23,9 @@ module.exports = (dispatcher) => {
   dispatcher.onGet('/api/customer', (req, res) => {
     const customer = {
       firstName: 'Tony',
-      lastName: 'Stark'
+      lastName: 'Stark',
+      agent: 'Iron Bot',
+      network: 'Stark Industries'
     }
 
     res.writeHead(200, {'Content-Type': 'application/json'})
