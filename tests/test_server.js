@@ -1,6 +1,12 @@
-const T = require('tap')
-const Http = require('http')
-const Server = require('../server')
+
+///////////////////////////////////////////////////////////////
+////////              test runner                       ///////
+///////            c 2017 strategicmachines           ////////
+/////////////////////////////////////////////////////////////
+
+const T =       require('tap')
+const Http =    require('http')
+const Server =  require('../server')
 
 Server.listen()
 
