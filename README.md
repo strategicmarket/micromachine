@@ -1,11 +1,22 @@
-# Create, Test, and Deploy an Http Server in Node.js
+## Strategic Machines
 
-This is the solution used to tackle a 3 part blog series on creating, testing and deploying a Http Server with Node.js.
+## Developer workbench for testing microservices
 
-This isn't meant to be a simple Hello World example but rather a solid working example of something you might use to ship to production. In a future post we will build upon this example exploring why frameworks like Express and Hapi play such a big role in our ecosystem.
+A simple http server providing a platform for testing microservices used on the Strategic Machine platform. The server is purposely stripped down to emulate the functions one would encounter in Lamda or OpenWhisk environments.
 
-This series is broken down into three parts:
 
-* [Part 1](https://blog.hellotangible.com/create-test-and-deploy-an-http-server-in-node-js-part-1-6c6d024e53fd#.2iwgunua3): To kick off this series we’re going to create a simple http server, then add what’s called a dispatcher to help redirect a request to their appropriate endpoints.
-* Part 2: We will then introduce some automated testing, refactoring the base we’ve built and see some green balls.
-* Part 3: Lastly in part 3, we will leverage some hidden powers of npm, automating tasks, and finally deploy our bits to Xervo.
+## Getting Set Up
+
+Getting the app running on your local machine takes only a few steps:
+
+1. clone the project - `git clone https://github.com/strategicmarket/micromachine.git`
+3. Update configuration parameters
+4. start the app - npm run dev
+
+## License and Use
+ [LICENSE](./LICENSE.txt)
+
+## Contributing
+ [contributing](.github/CONTRIBUTING.md)
+
+xio labs and affiliates
