@@ -16,6 +16,14 @@ const app =   express();
 
 const port = process.env.port || 8080
 
+//////////////////////////////////////////////////////////////////////////
+////////////////////  Register Middleware       /////////////////////////
+////////////////////////////////////////////////////////////////////////
+
+app.use(logger("dev"));
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
 const handleRequest = (request, response) => {
   Winston.info(`Route requested: ${request.url}`)
   dispatcher.dispatch(request, response)
