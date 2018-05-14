@@ -20,7 +20,7 @@ const auth = (router) => {
      next()
 
     })
-  })
-}
+  }
+
 
 module.exports = auth
