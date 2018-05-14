@@ -1,98 +1,30 @@
 
+
 ////////////////////////////////////////////////////////////////
-////////             strategicmachines.io              ////////
-//////           developer testing workbench           ///////
-//////       c xio 2017 - all rights reserved         ///////
+////////      Intelligent Messaging Platform           ////////
+////////      Developer testing workbench             ////////
+//////       entry point to accomodate dev & prod     ///////
+/////c Startegic Machines 2016 - all rights reserved ///////
 ///////////////////////////////////////////////////////////
 
-require('dotenv').config()
-
-const express =            require('express');
-const path =               require('path');
-const bodyParser =         require('body-parser');
-
-const app =   express();
-
-//////////////////////////////////////////////////////////////////////////
-////////////////////  Register Middleware       /////////////////////////
-////////////////////////////////////////////////////////////////////////
-
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-app.use(express.static('public'));
-
-//////////////////////////////////////////////////////
-////////// Register and Config Skill Bundles/////////
-////////////////////////////////////////////////////
-
-// routes for general api handling
-const log =         express.Router()
-const auth =        express.Router();
-const help =        express.Router();
-const errs =        express.Router();
-const unk =         express.Router();
-
-require('../routes/log')(log);
-require('../routes/auth')(auth);
-require('../routes/help')(help);
-require('../routes/error')(errs);
-require('../routes/unk')(unk);
-
-
-// routes for triggering skill bundles
-const banter =      express.Router();
-const sale =        express.Router();
-const ship =        express.Router();
-
-require('../skills/banter')(banter);
-require('../skills/sale')(sale);
-require('../skills/ship')(ship);
-
-
-
-//////////////////////////////////////////////////////////////////////////
-///////////////////////////// API CATALOGUE /////////////////////////////
-////////////////////////////////////////////////////////////////////////
-
-// log everything
-app.use(log)
-// auth everything
-app.use(auth)
-// help
-app.get('/', help)
-
-// trigger skill execution via api
-app.use('/api/sms', sms)
-// web > twilio > text
-app.use('/api/web', web)
-// db api
-app.use('/api/db', db)
-
-// 404
-app.use(unk)
-// error handling
-app.use(errs)
-
-// server
-let port = process.env.PORT || keys.port;
-
-app.listen(port, () => {
-  console.log(b('listening on port '), port)
-});
-
-exports.listen = () => {
-  server.listen(port, () => {
-    Winston.info(`Http server listening on http://localhost:${port}`)
-  })
+// based on environment detected set the environment isLive variable
+if(process.env.VCAP_APPLICATION && process.env.PRODUCTION){
+	process.env.isLive=true
+	require('./zserver/index.js')
 }
 
-exports.close = (next) => {
-  server.close(next)
+//////////////////////////////////////////////////////////////////////
+///////////////    2. Bluemix Development    ///////////////////////
+////////////////////////////////////////////////////////////////////
+else if(process.env.VCAP_APPLICATION){
+		process.env.isLive=true
+		require('./zserver/index.js')
 }
 
-console.log(process.env)
-
-const startServer = process.argv.find((n) => n === '--start')
-if (startServer) {
-  exports.listen()
+/////////////////////////////////////////////////////////////////////
+//////////////     3. Localhost - Development    ////////////////////
+////////////////////////////////////////////////////////////////////
+else {
+	process.env.isLive=false
+	require('./zserver/index.js')
 }
