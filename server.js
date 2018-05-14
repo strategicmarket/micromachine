@@ -31,7 +31,7 @@ exports.close = (next) => {
   server.close(next)
 }
 
-const shouldStart = process.argv.find((n) => n === '--start')
-if (shouldStart) {
+const startServer = process.argv.find((n) => n === '--start')
+if (startServer) {
   exports.listen()
 }
