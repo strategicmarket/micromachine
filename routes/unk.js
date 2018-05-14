@@ -24,8 +24,8 @@ const unk = (router) => {
 			}
 
 	  if (req.accepts('json')) {
-	    res.send({ error: 'Not found' });
-	    return;
+	    	res.send({ error: 'Not found' });
+	    	return;
 	  }
 
 	  res.type('txt').send('Not found');

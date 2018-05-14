@@ -15,9 +15,7 @@ const help = (router) => {
 	  <pre>
 	  strategicmachines.io: intelligent interaction platform
 
-	  Use an Authorization header to work with your own data:
-	  fetch(url, { headers: { 'Authorization': 'whatever-you-want' }})
-	  Endpoints vary by dbstore being modeled. Check the code for details
+	  developer workbench for constructing winsome interactions
 
 	  &copy2016 Strategic Machines all rights reserved
 	  </pre> `
