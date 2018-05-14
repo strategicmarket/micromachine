@@ -7,9 +7,10 @@
 
 require('dotenv').config()
 
-const express =            require('express');
-const path =               require('path');
-const bodyParser =         require('body-parser');
+const express =             require('express');
+const path =                require('path');
+const bodyParser =          require('body-parser');
+const { g, b, gr, r, y } =  require('../console')
 
 const app =   express();
 
