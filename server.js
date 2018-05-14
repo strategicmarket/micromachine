@@ -34,7 +34,7 @@ const handleRequest = (request, response) => {
 ////////// Register and Config Skill Bundles/////////
 ////////////////////////////////////////////////////
 
-// software bundle for a skill is triggered via api route
+// routes for general api handling
 const log =         express.Router()
 const auth =        express.Router();
 const help =        express.Router();
@@ -48,12 +48,10 @@ require('../routes/error')(errs);
 require('../routes/unk')(unk);
 
 
-// routes for skill bundles
-
+// routes for triggering skill bundles
 const banter =      express.Router();
 const sale =        express.Router();
 const ship =        express.Router();
-
 
 require('../skills/banter')(banter);
 require('../skills/sale')(sale);
