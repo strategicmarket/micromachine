@@ -1,17 +1,10 @@
 {
-  "name": "spike",
-  "version": "1.0.0",
-  "description": "",
+  "name": "micromachine",
+  "version": "0.5.0",
+  "description": "Test microservices",
   "main": "server.js",
-  "author": "Clark Sell",
+  "author": "Strategic Machines",
   "license": "MIT",
-  "xervo": {
-    "projectName": "HttpServerSpike",
-    "url": "http://httpserverspike-96691.app.xervo.io"
-  },
-  "engines": {
-    "node": ">=6.5"
-  },
   "dependencies": {
     "httpdispatcher": "^2.0.1",
     "winston": "^2.3.1"
@@ -23,9 +16,6 @@
   "scripts": {
     "start": "node ./server.js --start",
     "pretest": "standard",
-    "test": "tap tests/**/*.js",
-    "xervo:push": "xervo deploy ./ -p $npm_package_xervo_projectName && open $npm_package_xervo_url",
-    "xervo:start": "xervo project start -p $npm_package_xervo_projectName && open $npm_package_xervo_url",
-    "xervo:stop": "xervo project stop -p $npm_package_xervo_projectName"
+    "test": "tap tests/**/*.js"  
   }
 }
