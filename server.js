@@ -1,3 +1,11 @@
+
+////////////////////////////////////////////////////////////////
+////////             strategicmachines.io              ////////
+//////           developer testing workbench           ///////
+//////       c xio 2017 - all rights reserved         ///////
+///////////////////////////////////////////////////////////
+
+
 const Http = require('http')
 const HttpDispatcher = require('httpdispatcher')
 const Winston = require('winston')
