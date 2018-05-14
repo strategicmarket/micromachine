@@ -1,0 +1,5 @@
+
+
+A small utility to recursively run npm install in any child directory that has a package.json file excluding sub directories of node_modules.
+
+https://www.npmjs.com/package/recursive-install
