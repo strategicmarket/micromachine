@@ -6,9 +6,9 @@
 ///////////////////////////////////////////////////////////
 
 
-const Http = require('http')
-const HttpDispatcher = require('httpdispatcher')
-const Winston = require('winston')
+const Http =            require('http')
+const HttpDispatcher =  require('httpdispatcher')
+const Winston =         require('winston')
 
 const dispatcher = new HttpDispatcher()
 const port = process.env.port || 8080
