@@ -11,7 +11,7 @@ Getting the app running on your local machine takes only a few steps:
 
 1. clone the project - `git clone https://github.com/strategicmarket/micromachine.git`
 3. Update configuration parameters
-4. start the app - npm run dev
+4. start the app - npm run start
 
 ## License and Use
  [LICENSE](./LICENSE.txt)
@@ -19,4 +19,4 @@ Getting the app running on your local machine takes only a few steps:
 ## Contributing
  [contributing](.github/CONTRIBUTING.md)
 
-xio labs and affiliates
+Strategic Machines and affiliates
