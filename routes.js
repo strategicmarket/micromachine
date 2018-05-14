@@ -10,8 +10,9 @@ const Winston = require('winston')
 module.exports = (dispatcher) => {
   Winston.info('routes registered')
 
-  dispatcher.setStatic('/public')
-  dispatcher.setStaticDirname('static')
+  dispatcher.setStaticDirname(__dirname)
+  dispatcher.setStatic('public')
+  //dispatcher.setStaticDirname('static')
 
   // html pages
   dispatcher.onGet('/', (req, res) => {
@@ -54,7 +55,8 @@ module.exports = (dispatcher) => {
    });
 
   dispatcher.onError = (req, res) => {
-    res.writeHead(404)
+    console.log("does this fire")
+    res.writeHead(404, {'Content-Type': 'text/html'})
     res.end('<h1>Resource not found</h1>')
   }
 }

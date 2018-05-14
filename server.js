@@ -5,12 +5,15 @@
 //////       c xio 2017 - all rights reserved         ///////
 ///////////////////////////////////////////////////////////
 
+require('dotenv').config()
 
-const Http =            require('http')
-const HttpDispatcher =  require('httpdispatcher')
-const Winston =         require('winston')
+const express =            require('express');
+const path =               require('path');
+const bodyParser =         require('body-parser');
+const Winston =            require('winston')
 
-const dispatcher = new HttpDispatcher()
+const app =   express();
+
 const port = process.env.port || 8080
 
 const handleRequest = (request, response) => {
@@ -30,6 +33,8 @@ exports.listen = () => {
 exports.close = (next) => {
   server.close(next)
 }
+
+console.log(process.env)
 
 const startServer = process.argv.find((n) => n === '--start')
 if (startServer) {
