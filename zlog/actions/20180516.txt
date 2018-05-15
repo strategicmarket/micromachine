@@ -1,13 +1,18 @@
 
 
+
+Actions
+Tuesday
+
+
+1. explore - 
 A small utility to recursively run npm install in any child directory that has a package.json file excluding sub directories of node_modules.
 
 https://www.npmjs.com/package/recursive-install
 
-
-subfolders a dependencies
+2. subfolders dependencies
 https://glebbahmutov.com/blog/subfolders-as-dependencies/
 
 
-publish package
+3. publish package
 https://hackernoon.com/how-to-publish-your-package-on-npm-7fc1f5aae600
