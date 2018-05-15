@@ -45,4 +45,7 @@ https://github.com/avajs/ava
 https://slackin.now.sh/
 https://github.com/rauchg/slackin
 
+9 continuous test and integration cycle -- useing docker and jenkins (Travis CI?)
+https://medium.com/prismapp/10-steps-how-to-automate-your-api-testing-effectively-af866fba942f
+
 
