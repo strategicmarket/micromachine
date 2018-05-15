@@ -23,3 +23,15 @@ https://hackernoon.com/how-to-publish-your-package-on-npm-7fc1f5aae600
 https://apex.sh/
 
 https://serverless.zone/express-to-aws-lambda-apex-edition-part-1-bcc11102feeb
+
+6 build an example for apex -- use micro and examples from apex site to develop a test app
+
+https://mxstbr.blog/2017/01/your-first-node-microservice/
+https://www.npmjs.com/package/micro
+https://github.com/apex/up-examples/tree/master/oss/node-micro
+
+7 using supertest -- write an http server that pings micromachine and demonstrates testing outcomes for the api call  --- 
+
+- a framework for how a developer build services locally
+- then deploy to aws via apex/up
+- then conduct test to show aws lamda works as expected
