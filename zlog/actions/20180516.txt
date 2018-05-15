@@ -35,3 +35,14 @@ https://github.com/apex/up-examples/tree/master/oss/node-micro
 - a framework for how a developer build services locally
 - then deploy to aws via apex/up
 - then conduct test to show aws lamda works as expected
+
+7.1 Using Ava and supertest endpoint testing example
+https://github.com/avajs/ava/blob/master/docs/recipes/endpoint-testing.md
+https://github.com/avajs/ava
+
+8. create homepage - to join slack community
+
+https://slackin.now.sh/
+https://github.com/rauchg/slackin
+
+
