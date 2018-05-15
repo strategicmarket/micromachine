@@ -10,6 +10,7 @@ require('dotenv').config()
 const express =             require('express');
 const path =                require('path');
 const bodyParser =          require('body-parser');
+const favicon =             require('serve-favicon');
 const { g, b, gr, r, y } =  require('../console')
 
 const app =   express();
@@ -21,6 +22,7 @@ const app =   express();
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(express.static('public'));
+app.use(favicon(path.join(__dirname, '..', '/public/assets/favicon.ico')));
 
 //////////////////////////////////////////////////////
 ////////// Register and Config Skill Bundles/////////
