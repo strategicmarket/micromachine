@@ -20,7 +20,6 @@
   "scripts": {
     "start": "node ./server.js --start",
     "pretest": "standard",
-    "test": "tap tests/**/*.js",
-    "postinstall": "cd ./skills/banter && npm install"
+    "test": "tap tests/**/*.js"  
   }
 }
