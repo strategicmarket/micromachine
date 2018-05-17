@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "node ./server.js --start",
-    "pretest": "standard",
-    "test": "tap tests/**/*.js"  
+    "std": "standard",
+    "test": "tap tests/**/*.js"
   }
 }
