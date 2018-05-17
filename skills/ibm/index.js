@@ -33,18 +33,9 @@ const ibm = (router) => {
   // stages for message analysis and response
   // req object initialized in auth with db connection - validate customer
 
-  async function test(req, res) {
-    let result =    await initialize(req)
-    let stage100 =    await state(stage000)
-    let stage200 =    await intent(stage100)
-    let stage400 =    await machine(stage200)
-    let stage450 =    await metrics(stage400)
-    let stage500 =    await agent(stage450)
-    // pass in the res object to close off http session
-    let stage900 =    await response(stage500, res)
-    let stage950 =    await record(stage900)
-
-    return stage950
+  async function test(req, res)
+    let result =    	await banter(req)  
+    return result
   }
 
 
