@@ -13,7 +13,7 @@ const banter = (router) => {
 	router.use(bodyParser.json());
 	router.use(function(req, res, next) {
 
-		console.log(r("banter"))
+		console.log(g("banter   -- testing an openwhisk microservice"))
 		res.status(200).send({ message: 'Banter!' })
 
     next()
