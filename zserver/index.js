@@ -43,12 +43,12 @@ require('../routes/unk')(unk);
 
 
 // routes for triggering skill bundles
-const banter =      express.Router();
-const sale =        express.Router();
-const ship =        express.Router();
+const ibm =      express.Router();
+const aws =      express.Router();
+const ship =     express.Router();
 
-require('../skills/banter')(banter);
-require('../skills/sale')(sale);
+require('../skills/ibm')(ibm);
+require('../skills/aws')(aws);
 require('../skills/ship')(ship);
 
 
