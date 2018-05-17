@@ -10,6 +10,8 @@ const { g, b, gr, r, y } =  require('../../console')
 
 // destructure for every package export
 const {banter} = 						require('./packages')
+console.log("what is this")
+console.log(banter)
 
 // all packages tested in this thread are configured for openwhisk
 const ibm = (router) => {
