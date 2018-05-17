@@ -1,0 +1,19 @@
+# main configuration file for serverless framework
+# https://serverless.com/framework/docs/providers/openwhisk/guide/functions/
+
+service: sm
+
+provider:
+  name: openwhisk
+  runtime: nodejs:8
+  memorySize: 256 # optional, default is 256
+  timeout: 5 # optional, default is 60
+
+functions:
+    banter:
+      handler: banter.handler
+      name: sm_banter
+
+# run npm install to download the provider plugin
+plugins:
+    - serverless-openwhisk
