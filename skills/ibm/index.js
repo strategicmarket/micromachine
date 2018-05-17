@@ -33,12 +33,10 @@ const ibm = (router) => {
   // stages for message analysis and response
   // req object initialized in auth with db connection - validate customer
 
-  async function test(req, res)
-    let result =    	await banter(req)  
+  async function test(req, res) {
+    let result =    	await banter(req)
     return result
   }
-
-
 
 
  });

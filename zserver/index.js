@@ -64,10 +64,11 @@ app.use(auth)
 // help
 app.get('/', help)
 
-// trigger skill execution via api
-app.use('/api/banter', banter)
+// trigger skill execution via api - testing microservices configured
+// the openwhisk or lamda platforms. Ship is a simple http test 
+app.use('/api/ibm', ibm)
 // web > twilio > text
-app.use('/api/sale', sale)
+app.use('/api/aws', aws)
 // db api
 app.use('/api/ship', ship)
 

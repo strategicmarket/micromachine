@@ -4,4 +4,4 @@
 ////////    index master       ///////
 /////////////////////////////////////
 
-exports.banter =     require('./packages/sm_banter/banter.js')
+exports.banter =     require('./sm_banter/banter.js')
