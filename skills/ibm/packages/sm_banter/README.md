@@ -1,2 +1,7 @@
-# Microservice
-turing machine for the strategic machines platform
+
+
+# Test Microservice
+
+deployed to openwhisk
+
+strategic machines platform
