@@ -15,10 +15,9 @@ function main(obj) {
 
           machine()
             .then((o) => {
-              // active the object with data
-              // REFACTOR before deploy. Have to pick off the data object from the input ---
-              // the data object is already set up in openwhisk -- so o.updateWorkObj(obj) would be correct
-              o.updateWorkObj(obj.body)
+              // active the constructor with the data object being passed in
+              // see the test runner at skills/ibm/index.js for req.body to trigger this function          
+              o.updateWorkObj(obj)
               // grab a copy of the validated data object
               let args = o.getWorkObj()
             //  console.log(args)
@@ -32,7 +31,7 @@ function main(obj) {
                   result.reply = response.slice()
                 //  resolve(result)
                   o.setAgentReply(result)
-                  let newObj = o.getWorkObj()                
+                  let newObj = o.getWorkObj()
                   resolve(newObj)
                   //return
               })

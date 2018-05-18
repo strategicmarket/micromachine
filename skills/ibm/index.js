@@ -23,7 +23,7 @@ const ibm = (router) => {
     next()
 */
 		test(req, res).then((workObj) => {
-    console.log("-------TEST COMPLETED-------")		
+    console.log("-------TEST COMPLETED-------")
 		res.status(200).send(JSON.stringify(workObj))
     return
     }).catch((err) => {
@@ -32,11 +32,10 @@ const ibm = (router) => {
 		res.status(500).send(err)
   })
 
-  // stages for message analysis and response
-  // req object initialized in auth with db connection - validate customer
+  // triggers the function(s) -- note the data object is passed in from req object 
 
   async function test(req, res) {
-    let result =    	await banter(req)
+    let result =    	await banter(req.body)
     return result
   }
 
