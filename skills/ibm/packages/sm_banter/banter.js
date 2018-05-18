@@ -12,12 +12,16 @@ function main(obj) {
   return new Promise (function(resolve, reject){
           let result = {};
           console.log("---------Banter----------")
+
           machine()
             .then((o) => {
               // active the object with data
-              o.updateWorkObj(obj)
+              // REFACTOR before deploy. Have to pick off the data object from the input ---
+              // the data object is already set up in openwhisk -- so o.updateWorkObj(obj) would be correct
+              o.updateWorkObj(obj.body)
               // grab a copy of the validated data object
               let args = o.getWorkObj()
+            //  console.log(args)
               // begin to construct the response object
               result.sender = args.message.From
               result.orgmessage = args
@@ -26,10 +30,10 @@ function main(obj) {
 
               wat(args, (response) => {
                   result.reply = response.slice()
-                  console.log(result)
-                  //o.setAgentReply(result)
-                  //let newObj = o.getWorkObj()
-                  resolve(result)
+                //  resolve(result)
+                  o.setAgentReply(result)
+                  let newObj = o.getWorkObj()                
+                  resolve(newObj)
                   //return
               })
 

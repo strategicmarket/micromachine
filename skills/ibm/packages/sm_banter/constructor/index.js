@@ -61,7 +61,7 @@ const repository = () => {
   /////   Interactions            ///////
   //////////////////////////////////////
   const findLastInteraction = () => {
-    let obj = workObj
+    let obj = clone(workObj)
     return new Promise((resolve, reject) => {
       resolve(db.findLastInteraction(obj, conn))
       })
@@ -104,7 +104,8 @@ const repository = () => {
   }
 
   const getWorkObj = () => {
-    return workObj
+    let copyObj = clone(workObj)
+    return copyObj
   }
 
   const getStatus = () => {

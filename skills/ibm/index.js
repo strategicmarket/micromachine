@@ -10,8 +10,6 @@ const { g, b, gr, r, y } =  require('../../console')
 
 // destructure for every package export
 const {banter} = 						require('./packages')
-console.log("what is this")
-console.log(banter)
 
 // all packages tested in this thread are configured for openwhisk
 const ibm = (router) => {
@@ -25,11 +23,13 @@ const ibm = (router) => {
     next()
 */
 		test(req, res).then((workObj) => {
-    console.log("-------TEST COMPLETED-------")
+    console.log("-------TEST COMPLETED-------")		
+		res.status(200).send(JSON.stringify(workObj))
     return
     }).catch((err) => {
     console.log("ERROR IN THREAD PROCESSING")
     console.log(err)
+		res.status(500).send(err)
   })
 
   // stages for message analysis and response

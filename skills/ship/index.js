@@ -11,7 +11,7 @@ const ship = (router) => {
 
 	router.use(bodyParser.json());
 	router.use(function(req, res, next) {
-		console.log(r("ship"))
+		console.log(g("ship"))
 
 	  res.status(200).send({ message: 'Ship!' })
 
