@@ -65,7 +65,7 @@ app.use(auth)
 app.get('/', help)
 
 // trigger skill execution via api - testing microservices configured
-// the openwhisk or lamda platforms. Ship is a simple http test 
+// the openwhisk or lamda platforms. Ship is a simple http test
 app.use('/api/ibm', ibm)
 // web > twilio > text
 app.use('/api/aws', aws)
@@ -77,8 +77,8 @@ app.use(unk)
 // error handling
 app.use(errs)
 
-// server
-let port = process.env.PORT || keys.port;
+// server - be sure a .env file is created with Port=5500
+let port = process.env.PORT
 
 app.listen(port, () => {
   console.log(g(`listening on port ${port}`))
