@@ -4,7 +4,7 @@
 //////////////////////////////////////////////////////////////////
 const greeting =              require('greeting');
 const request =               require('request-promise');
-const {machine} =             require('./constructor')
+const {createMachine} =       require('@xmachina/message')
 
 function main(obj) {
 
@@ -13,13 +13,11 @@ function main(obj) {
           let result = {};
           console.log("---------Banter----------")
 
-          machine()
-            .then((o) => {
-              // active the constructor with the data object being passed in
-              // see the test runner at skills/ibm/index.js for req.body to trigger this function          
-              o.updateWorkObj(obj)
-              // grab a copy of the validated data object
-              let args = o.getWorkObj()
+              const m = createMachine()
+
+              m.updateWorkObj(obj)         // intialize work object with schema model
+
+              let args = m.getWorkObj()
             //  console.log(args)
               // begin to construct the response object
               result.sender = args.message.From
@@ -30,18 +28,13 @@ function main(obj) {
               wat(args, (response) => {
                   result.reply = response.slice()
                 //  resolve(result)
-                  o.setAgentReply(result)
-                  let newObj = o.getWorkObj()
+                  m.setAgentReply(result)
+                  let newObj = m.getWorkObj()
                   resolve(newObj)
                   //return
               })
 
-            })
-             .catch((e) => {
-                console.log("Experiment failed")
-                console.log(e)
-                reject(e)
-          })
+
         //  result.reply.push({'link': 'http://www.example.com/'})
     })
   }
