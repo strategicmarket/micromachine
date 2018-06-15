@@ -24,7 +24,10 @@ const ibm = (router) => {
 */
 		test(req, res).then((workObj) => {
     console.log("-------TEST COMPLETED-------")
-		res.status(200).send(JSON.stringify(workObj))
+		console.log(workObj.message.From)
+		console.log(workObj.message.Body)
+		console.log(workObj)
+		res.status(200).send(workObj)
     return
     }).catch((err) => {
     console.log("ERROR IN THREAD PROCESSING")
@@ -32,7 +35,7 @@ const ibm = (router) => {
 		res.status(500).send(err)
   })
 
-  // triggers the function(s) -- note the data object is passed in from req object 
+  // triggers the function(s) -- note the data object is passed in from req object
 
   async function test(req, res) {
     let result =    	await banter(req.body)
