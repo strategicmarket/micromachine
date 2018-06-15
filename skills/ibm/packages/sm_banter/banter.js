@@ -17,9 +17,7 @@ function main(obj) {
 
               m.updateWorkObj(obj)         // intialize work object with schema model
 
-              let args = m.getWorkObj()
-              console.log(args.message.From)
-              console.log(args.message.Body)
+              let args = m.getWorkObj()              
               // begin to construct the response object
               result.sender = args.message.From
               result.orgmessage = args

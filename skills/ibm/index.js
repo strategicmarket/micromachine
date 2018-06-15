@@ -23,10 +23,7 @@ const ibm = (router) => {
     next()
 */
 		test(req, res).then((workObj) => {
-    console.log("-------TEST COMPLETED-------")
-		console.log(workObj.message.From)
-		console.log(workObj.message.Body)
-		console.log(workObj)
+    console.log("-------TEST COMPLETED-------")	
 		res.status(200).send(workObj)
     return
     }).catch((err) => {
