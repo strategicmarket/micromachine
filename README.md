@@ -17,6 +17,11 @@ Getting the app running on your local machine takes only a few steps:
 
 5. npm run test
 
+Note that a model microservice and the use of @xmachina/message factory function for managing the state machine and working with the data object from the messaging platform can be found at
+
+[sample microservice and use of @machina/message](./skills/ibm/packages/sm_banter/banter.js)
+
+
 Microservices are the core of an Agent's 'intelligent interaction'. The design of Strategic Machines is to integrate the use NLO, NLU, NLG and Machine Learning with pure functions (microservices) -- reducing complexity, cost and cycle time for the build, test and deployment of winsome virtual Agents for businesses. The architecture of the Machines platform presumes a separation of concerns between important entities involved in the composition of cognitive apps:
 
 > platform services- The messaging platform is a low latency processing platform, integrating channels, state machines, and data services with every message before handing it to a microservice for response

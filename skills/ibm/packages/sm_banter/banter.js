@@ -1,10 +1,17 @@
-////////////////////////////////////////////////////////////////////
-/////////          chaotic microservice                 ///////////
-////////             echo and direct                 ///////////
+/////////////////////////////////////////////////////////////////////
+/////////          STRATEGIC MACHINES                     ///////////
+////////  MODEL MICROSERVICE LEVERAGING THE CONSTRUCTOR ///////////
 //////////////////////////////////////////////////////////////////
 const greeting =              require('greeting');
 const request =               require('request-promise');
 const {createMachine} =       require('@xmachina/message')
+
+// note to developer  -- this microservice is a simple model on how to invoke the message
+// factory function for working with the data object that is passed in from
+// Startegic Machine Messaging Platform ... and which needs to be returned
+
+// See the @xmachina/message docs on npm for more information on the range of
+// methods available to interrogate the data object and accomplish work
 
 function main(obj) {
 
@@ -13,11 +20,22 @@ function main(obj) {
           let result = {};
           console.log("---------Banter----------")
 
+
+              // invoke the factory function which crates a 'state machine'
+              // this 'machine' is stateless to begin ... but detects the state of dialogue
+              // and helps to track progress
               const m = createMachine()
+
+              // pass in the data object that the microservice receives from the messaging
+              // platform. This action helps to set the state of the 'finite state machine'
+
 
               m.updateWorkObj(obj)         // intialize work object with schema model
 
-              let args = m.getWorkObj()              
+              // a range of functions are now available for us to interrogate the object
+              // and perform other actions
+
+              let args = m.getWorkObj()
               // begin to construct the response object
               result.sender = args.message.From
               result.orgmessage = args
@@ -27,6 +45,11 @@ function main(obj) {
               wat(args, (response) => {
                   result.reply = response.slice()
                 //  resolve(result)
+
+                // the reply of the agent must be recorded in the machine ... and
+                // the updated data object retreived and returned as the final step
+                // of the microservice
+
                   m.setAgentReply(result)
                   let newObj = m.getWorkObj()
                   resolve(newObj)
