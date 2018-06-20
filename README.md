@@ -10,16 +10,18 @@ A simple http server providing a platform for testing microservices used on the 
 Getting the app running on your local machine takes only a few steps:
 
 1. clone the project - `git clone https://github.com/strategicmarket/micromachine.git`
-2. Update configuration parameters
+2. npm install
 3. start the app - npm run start
 
-4. npm run std - analyzes code based on common javascript standards
-
-5. npm run test
-
-Note that a model microservice and the use of @xmachina/message factory function for managing the state machine and working with the data object from the messaging platform can be found at
+4. Note that a model microservice and the use of @xmachina/message factory function for managing the state machine and working with the data object from the messaging platform can be found at
 
 [sample microservice and use of @machina/message](./skills/ibm/packages/sm_banter/banter.js)
+
+npm install needs to be executed in this root directory as well to import dependencies
+
+5. Note that micromachine needs to be started before apimachine. When apimachine is started with the command npm start, it will fire off several test http transactions and log the test results 
+
+----
 
 Microservices are the core of an Agent's 'intelligent interaction'. The design of Strategic Machines is to integrate the use NLO, NLU, NLG and Machine Learning with pure functions (microservices) -- reducing complexity, cost and cycle time for the build, test and deployment of winsome virtual Agents for businesses. The architecture of the Machines platform presumes a separation of concerns between important entities involved in the composition of cognitive apps:
 
